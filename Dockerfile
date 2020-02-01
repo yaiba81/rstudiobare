@@ -1,4 +1,4 @@
-FROM 172.30.1.1:5000/myproject/rstudiobare
+FROM 172.30.1.1:5000/myproject/rstudiobare:latest
 
 USER root
 
