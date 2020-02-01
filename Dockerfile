@@ -1,6 +1,7 @@
-FROM 172.30.1.1:5000/myproject/rstudio:latest
+FROM 172.30.1.1:5000/myproject/rstudiobare
 
 USER root
+
 # Setup various variables
 ENV TZ="Europe/Helsinki" \
     HOME="/mnt/${NAME}-pvc" \
@@ -11,6 +12,7 @@ ENV TZ="Europe/Helsinki" \
     PKG_RSTUDIO_VERSION=1.1.447 \
     PKG_SHINY_VERSION=1.5.7.907
 
+# Setup Tini, as S6 does not work when run as non-root users
 RUN chmod +x /sbin/tini
 
 # Setup Shiny
@@ -32,7 +34,8 @@ RUN chmod go+w -R $HOME && \
     usermod -u 988 rstudio-server && \
     groupmod -g 988 rstudio-server && \
     usermod -u "$APP_UID" "$USERNAME" && \
-    groupmod -g "$APP_GID" "$USERNAME" 
+    groupmod -g "$APP_GID" "$USERNAME" && \
+    chmod -R go+w /tmp/downloaded_packages /etc/rstudio/rsession.conf
 
 RUN chgrp root -R /usr/local/lib/R/site-library
 
