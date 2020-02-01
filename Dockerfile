@@ -1,4 +1,4 @@
-FROM https://docker-registry-default.127.0.0.1.nip.io/myproject/rstudio:latest
+FROM grafana/grafana
 
 # Setup various variables
 ENV TZ="Europe/Helsinki" \
