@@ -1,4 +1,4 @@
-FROM myproject/rstudio:latest
+FROM ImageStreamTag:myproject/rstudio:latest
 
 # Setup various variables
 ENV TZ="Europe/Helsinki" \
