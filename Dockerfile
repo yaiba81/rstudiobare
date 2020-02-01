@@ -32,7 +32,7 @@ RUN chmod go+w -R $HOME && \
     usermod -u 988 rstudio-server && \
     groupmod -g 988 rstudio-server && \
     usermod -u "$APP_UID" "$USERNAME" && \
-    groupmod -g "$APP_GID" "$USERNAME" && \
+    groupmod -g "$APP_GID" "$USERNAME" 
 
 RUN chgrp root -R /usr/local/lib/R/site-library
 
