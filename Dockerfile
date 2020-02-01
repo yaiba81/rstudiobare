@@ -1,4 +1,4 @@
-FROM 3659e9f63886
+FROM https://docker-registry-default.127.0.0.1.nip.io/myproject/rstudio
 
 # Setup various variables
 ENV TZ="Europe/Helsinki" \
