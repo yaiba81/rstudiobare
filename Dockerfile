@@ -33,7 +33,6 @@ RUN chmod go+w -R $HOME && \
     groupmod -g 988 rstudio-server && \
     usermod -u "$APP_UID" "$USERNAME" && \
     groupmod -g "$APP_GID" "$USERNAME" && \
-    chmod -R go+w /tmp/downloaded_packages /etc/rstudio/rsession.conf
 
 RUN chgrp root -R /usr/local/lib/R/site-library
 
