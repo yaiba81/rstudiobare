@@ -1,11 +1,4 @@
-RUN docker login -u kalbo -p MBwL1B5kESgku_E-iYc-TfPRHT6aMqt6tMndRSdXzyY https://docker-registry-default.127.0.0.1.nip.io
-RUN docker login -u kalbo -p MBwL1B5kESgku_E-iYc-TfPRHT6aMqt6tMndRSdXzyY docker-registry-default.127.0.0.1.nip.io
-
-FROM docker-registry-default.127.0.0.1.nip.io/myproject/rstudio:latest
-
-RUN docker login -u kalbo -p MBwL1B5kESgku_E-iYc-TfPRHT6aMqt6tMndRSdXzyY https://docker-registry-default.127.0.0.1.nip.io
-RUN docker login -u kalbo -p MBwL1B5kESgku_E-iYc-TfPRHT6aMqt6tMndRSdXzyY docker-registry-default.127.0.0.1.nip.io
-
+FROM myproject/rstudio:latest
 
 # Setup various variables
 ENV TZ="Europe/Helsinki" \
