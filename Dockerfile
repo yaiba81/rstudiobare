@@ -1,4 +1,4 @@
-FROM 172.30.1.1:5000/myproject/rstudio:latest
+FROM b4a08b441430
 
 USER root
 
