@@ -1,16 +1,12 @@
-FROM 8568a7e5a7d4
+FROM 172.30.1.1:5000/myproject/rstudio
 
 USER root
 
 # Setup various variables
 ENV TZ="Europe/Helsinki" \
     HOME="/mnt/${NAME}-pvc" \
-    TINI_VERSION=v0.18.0 \
     APP_UID=999 \
-    APP_GID=999 \
-    PKG_R_VERSION=3.4.4 \
-    PKG_RSTUDIO_VERSION=1.1.447 \
-    PKG_SHINY_VERSION=1.5.7.907
+    APP_GID=999
 
 # Setup Tini, as S6 does not work when run as non-root users
 RUN chmod +x /sbin/tini
