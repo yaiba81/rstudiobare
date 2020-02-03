@@ -47,8 +47,8 @@ RUN chgrp root /usr/local/bin/fix.sh \
     && chmod 774 /usr/local/bin/fix.sh
 
 
-#USER $APP_UID:$APP_GID
-USER 1001
+USER $APP_UID:$APP_GID
+#USER 1001
 WORKDIR $HOME
 EXPOSE 8787 3838
 #MAINTAINER
